@@ -1,0 +1,3 @@
+2017-06-30 19:10:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "LAUNCHTUBE" not found; SQL statement:
+select * from launchTube [42102-195]
