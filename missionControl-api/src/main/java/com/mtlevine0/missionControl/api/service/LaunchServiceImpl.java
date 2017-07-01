@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.mtlevine0.missionControl.api.model.LaunchTube;
 import com.mtlevine0.missionControl.api.repository.LaunchTubeRepository;
 import com.mtlevine0.missionControl.api.util.LaunchTubeTimer;
+import com.pi4j.io.gpio.GpioController;
+import com.pi4j.io.gpio.GpioFactory;
 
 @Service
 public class LaunchServiceImpl implements LaunchService {
@@ -32,8 +34,11 @@ public class LaunchServiceImpl implements LaunchService {
 				
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
 		List<LaunchTube> launchTubeList = launchTubeRepository.findAll();
+		
+		GpioController gpio = GpioFactory.getInstance();
+		
 		for(LaunchTube tube : launchTubeList) {
-			executorService.execute(new LaunchTubeTimer(tube));
+			executorService.execute(new LaunchTubeTimer(tube, gpio));
 		}
 		executorService.shutdown();
 		launchTubeRepository.deleteAll();
