@@ -3,16 +3,16 @@ package com.mtlevine0.missionControl.api.util;
 import com.mtlevine0.missionControl.api.model.LaunchTube;
 import com.mtlevine0.missionControl.driver.LaunchTubeDriver;
 import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.io.gpio.GpioPinDigitalOutput;
 
 public class LaunchTubeTimer implements Runnable {
 
 	private LaunchTube launchTube;
-	private GpioController gpio;
-
-	public LaunchTubeTimer(LaunchTube launchTube, GpioController gpio) {
+	private GpioPinDigitalOutput tubePin;
+	
+	public LaunchTubeTimer(LaunchTube launchTube, GpioPinDigitalOutput tubePin) {
 		this.launchTube = launchTube;
-		this.gpio = gpio;
+		this.tubePin = tubePin;
 	}
 
 	public void run() {
@@ -20,11 +20,10 @@ public class LaunchTubeTimer implements Runnable {
 		try {
 			Thread.sleep((long) launchTube.getDelayTime() * 1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		LaunchTubeDriver tubeDriver = new LaunchTubeDriver(launchTube.getTubeId(), gpio);
+		LaunchTubeDriver tubeDriver = new LaunchTubeDriver(launchTube.getTubeId(), tubePin);
 		tubeDriver.launchTube();
 		System.out.println("LaunchTube " + launchTube.getTubeId() + " Delay: " + launchTube.getDelayTime());
 
