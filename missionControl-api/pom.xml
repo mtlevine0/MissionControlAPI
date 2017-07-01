@@ -39,7 +39,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.mtlevine0.missionControl</groupId>
-			<artifactId>driver</artifactId>
+			<artifactId>missionControl-driver</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
