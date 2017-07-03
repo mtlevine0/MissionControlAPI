@@ -29,22 +29,22 @@ public class MissionControlApplication {
 		
 		List<GpioPinDigitalOutput> pinList = new ArrayList<GpioPinDigitalOutput>();
 		
-		final GpioPinDigitalOutput pin0 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00, PinState.LOW);
-        pin0.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-		final GpioPinDigitalOutput pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, PinState.LOW);
-        pin1.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-		final GpioPinDigitalOutput pin2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, PinState.LOW);
-        pin2.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-		final GpioPinDigitalOutput pin3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, PinState.LOW);
-        pin3.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-		final GpioPinDigitalOutput pin4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, PinState.LOW);
-        pin4.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-		final GpioPinDigitalOutput pin5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, PinState.LOW);
-        pin5.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-		final GpioPinDigitalOutput pin6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, PinState.LOW);
-        pin6.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
-		final GpioPinDigitalOutput pin7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, PinState.LOW);
-        pin7.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin0 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_00, PinState.HIGH);
+        pin0.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, PinState.HIGH);
+        pin1.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, PinState.HIGH);
+        pin2.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin3 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_03, PinState.HIGH);
+        pin3.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin4 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04, PinState.HIGH);
+        pin4.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin5 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_05, PinState.HIGH);
+        pin5.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin6 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_06, PinState.HIGH);
+        pin6.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
+		final GpioPinDigitalOutput pin7 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07, PinState.HIGH);
+        pin7.setShutdownOptions(true, PinState.HIGH, PinPullResistance.OFF);
         
         pinList.add(pin0);
         pinList.add(pin1);

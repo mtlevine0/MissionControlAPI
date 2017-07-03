@@ -15,14 +15,14 @@ public class LaunchTubeDriver {
 	public void launchTube() {        
         System.out.println(this.tubeId + " - HIGH!");
 
-		tubePin.high();
+		tubePin.low();
 		
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		tubePin.low();
+		tubePin.high();
 		System.out.println(this.tubeId + " - LOW!");
 	}
 
